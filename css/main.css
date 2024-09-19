@@ -1,0 +1,66 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* estilos de header */
+header{
+    background-color: #25acb6;
+    text-align: center;
+    padding-bottom: 10px;
+    padding: 20px;
+}
+header nav ul{
+    list-style: none;
+}
+header nav ul li{
+    display: inline-block;
+    margin-left: 20px;
+}
+header nav ul li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+
+}
+/* estilos del main */
+main {
+    text-align: center;
+    padding: 10px;
+}
+main h1{
+    margin-bottom: 20px;
+}
+
+/* estilos footer */
+footer{
+    text-align: center;
+    background-color: #25acb6;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+}
+.celes-bg{
+    background-color: #25acb6;
+}
+
+.celestito:hover{
+    background-color: #25acb6;
+}
+/* fixed */
+.item-fixed{
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    bottom: 0%;
+    right: 0%; 
+
+}
+.flex-item{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 10px;
+}
+.flexbox{
+    display: flex;
+}
