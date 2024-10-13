@@ -1,1 +1,53 @@
-@import "base/reset";
+/* reset */
+@import url(utilidades/reset);
+
+@import url(utilidades/_home.scss);
+
+@import url(utilidades/_maps.scss);
+
+@import url(utilidades/_mixin.scss);
+
+//import variables
+@import url(utilidades/_variables.scss);
+
+
+// nesting
+header{ 
+    background-color:#25acb6 ;
+   text-align: center;
+   padding-bottom: 10px;
+   padding: 20px;
+   display: flex;
+   nav{ 
+       background-color:#25acb6 ;
+       margin: 1rem;
+       padding: 1rem;
+       ul{ list-style: none;
+           display: inline-block;
+           margin-left: 20px;
+           display: flex;
+           justify-content: center;
+            li{
+            a{color: rgb(0, 0, 0);
+             text-decoration: none;}
+        }}        
+   }
+ 
+}
+
+main{ 
+   
+   text-align: center;
+   padding: 10px;
+   h1{
+       margin-bottom: 20px;
+
+   }
+   
+    }
+footer{
+   text-align: center;
+   background-color:#25acb6;
+   color: rgb(0, 0, 0);
+   padding: 5px;
+   }

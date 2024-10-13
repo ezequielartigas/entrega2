@@ -1,0 +1,11 @@
+//mixin con parametros
+
+@mixin medidas($width, $height){
+    width: $width
+ 
+}
+
+
+
+
+//mixin sin parametros
