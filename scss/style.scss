@@ -13,19 +13,19 @@
 
 // nesting
 header{ 
-    background-color:#25acb6 ;
-   text-align: center;
+    background-color:$color-principal ;
+   @include center;
    padding-bottom: 10px;
    padding: 20px;
-   display: flex;
+   @include flex;
    nav{ 
-       background-color:#25acb6 ;
+       background-color:$color-principal ;
        margin: 1rem;
        padding: 1rem;
        ul{ list-style: none;
            display: inline-block;
            margin-left: 20px;
-           display: flex;
+           @include flex;
            justify-content: center;
             li{
             a{color: rgb(0, 0, 0);
@@ -37,7 +37,7 @@ header{
 
 main{ 
    
-   text-align: center;
+   @include center;
    padding: 10px;
    h1{
        margin-bottom: 20px;
@@ -46,8 +46,8 @@ main{
    
     }
 footer{
-   text-align: center;
-   background-color:#25acb6;
+   @include center;
+   background-color:$color-principal;
    color: rgb(0, 0, 0);
    padding: 5px;
    }

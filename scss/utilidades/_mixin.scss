@@ -1,11 +1,11 @@
-//mixin con parametros
 
-@mixin medidas($width, $height){
-    width: $width
- 
+
+@mixin center{
+    text-align: center;
+}
+@mixin flex{
+    display: flex;
 }
 
 
 
-
-//mixin sin parametros
