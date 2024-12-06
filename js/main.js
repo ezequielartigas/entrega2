@@ -1,143 +1,40 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const botones = document.querySelectorAll(".btn");
+    const listaCarrito = document.getElementById("lista-carrito");
+    const totalCarrito = document.getElementById("total-carrito");
+    let total = 0;
 
-// Objetos
-class Producto {
-    constructor(nombre, precio, cantidad) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = cantidad;
+    // Función para actualizar el total
+    function actualizarTotal() {
+        totalCarrito.textContent = total.toFixed(2);
     }
 
-    obtenerSubtotal() {
-        return this.precio * this.cantidad;
-    }
-}
+    // Evento para añadir productos al carrito
+    botones.forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+            const producto = e.target.parentElement;
+            const nombre = producto.querySelector("p:nth-of-type(1)").textContent;
+            const precioTexto = producto.querySelector("p:nth-of-type(2)").textContent;
+            const precio = parseFloat(precioTexto.replace("$", "").trim());
 
-// Funciones
-function obtenerProductoPorNombre() {
-    let nombreProducto = prompt("Ingrese el nombre del producto que quiere modificar");
+            // Crear elemento de lista para el carrito
+            const li = document.createElement("li");
+            li.innerHTML = `
+                ${nombre} - $${precio.toFixed(2)}
+                <button class="eliminar">X</button>
+            `;
+            listaCarrito.appendChild(li);
 
-    let productoEncontrado = productos.find( (el) => {
-        return el.nombre.toLowerCase() === nombreProducto.toLowerCase();
-    });
+            // Actualizar el total
+            total += precio;
+            actualizarTotal();
 
-    // Mientras el find no encuentre nada y devuelva undefined quedamos encerrados en el while
-    while(productoEncontrado === undefined) {
-        alert("PRODUCTO NO EXISTE");
-
-        nombreProducto = prompt("Ingrese el nombre del producto que quiere modificar");
-
-        productoEncontrado = productos.find( (el) => {
-            return el.nombre.toLowerCase() === nombreProducto.toLowerCase();
+            // Evento para eliminar productos del carrito
+            li.querySelector(".eliminar").addEventListener("click", () => {
+                li.remove();
+                total -= precio;
+                actualizarTotal();
+            });
         });
-    }
-
-    return productoEncontrado;
-}
-
-function modificarProducto() {
-    const productoEncontrado = obtenerProductoPorNombre();
-
-    const nuevoPrecio = parseFloat(prompt("Ingrese nuevo precio"));
-    const nuevaCantidad = parseInt(prompt("Ingrese nueva cantidad"));
-
-    productoEncontrado.precio = nuevoPrecio;
-    productoEncontrado.cantidad = nuevaCantidad;
-
-    alert("PRODUCTO MODIFICADO");
-}
-
-function mostrarTotal() {
-    const total = productos.reduce( (acc, el) => {
-        // Forma 1
-        // return acc + (el.cantidad * el.precio);
-
-        // Forma 2
-        return acc + el.obtenerSubtotal();
-    }, 0);
-
-    alert("EL TOTAL ES: $" + total);
-}
-
-function obtenerNombreDeProductoUnico() {
-    let nombreProducto = prompt("Ingrese nombre de producto");
-
-    let productoExiste = productos.some( (el) => {
-        return el.nombre.toLowerCase() === nombreProducto.toLowerCase();
     });
-
-    while(productoExiste) {
-        alert("PRODUCTO YA EXISTE!");
-        nombreProducto = prompt("Ingrese nombre de producto");
-        productoExiste = productos.some( (el) => {
-            return el.nombre.toLowerCase() === nombreProducto.toLowerCase();
-        });
-    }
-
-    return nombreProducto;
-}
-
-function crearProducto() {
-    // Pedimos los datos del producto
-    const nombreProducto = obtenerNombreDeProductoUnico();
-    const precioProducto = parseFloat(prompt("Ingrese precio de producto"));
-    const cantidad = parseInt(prompt("Ingrese cantidad"));
-
-    // Creamos el producto
-    const producto = new Producto(
-        nombreProducto,
-        precioProducto,
-        cantidad,
-    );
-
-    // Agregamos el producto al array
-    productos.push(producto);
-
-    alert("PRODUCTO AGREGADO");
-}
-
-function opcionValida() {
-
-    // Chequeamos si la opción es menor a 0 o mayor a 3
-    while(opcion < 0 || opcion > 3) {
-        alert("OPCIÓN INVÁLIDA");
-        opcion = parseInt(prompt(opciones));
-    }
-
-    // Si ingresó 0 para SALIR, retornamos false
-    if(opcion === 0) {
-        alert("SALIR");
-        return false;
-    }
-
-    return true;
-}
-
-// Inicio del programa
-const productos = [
-    new Producto("Termotanques", 20, 2),
-    new Producto("Griferias", 30, 3),
-    new Producto("Tanques de agua", 50, 4),
-];
-
-const opciones = "1- Crear un producto, 2- Mostrar total de productos, 3- Modificar producto, 0- Salir";
-let opcion = parseInt(prompt(opciones));
-
-while(opcionValida()) {
-
-    switch(opcion) {
-        case 1:
-            crearProducto();
-            break;
-
-        case 2:
-            mostrarTotal();
-            break;
-
-        case 3:
-            modificarProducto();
-            break;
-    }
-
-    // Volver a pedir la opción para no quedarse en un bucle infinito
-    opcion = parseInt(prompt(opciones));
-}
+});

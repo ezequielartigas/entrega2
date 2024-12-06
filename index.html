@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <script src="main.js"></script>
 
   <!-- banner principal -->
   <header>
@@ -60,66 +61,92 @@
 
   </main>
 
-  <!-- inicio seccion cuadros -->
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanitarios Barcala</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Inicio seccion cuadros -->
   <section>
-    
-      <h2>Categorias Destacadas</h2>
-    
+    <h2>Categorías Destacadas</h2>
     <div class="image-container">
+      <!-- Producto 1 -->
       <div class="card">
-        <img src="./img/acce-q.jpg" alt="accesorios  un conjunto de accesorios de baño de metal cromado. Incluye un portarrollos para papel higiénico, dos jaboneras, un portavaso con vaso transparente, dos ganchos para colgar toallas u otros objetos, y una barra para toallas. Todos los elementos tienen un diseño moderno y minimalista." class="imagen">
+        <img src="./img/acce-q.jpg" alt="Accesorios baño. Un conjunto de accesorios de baño de metal cromado." class="imagen">
         <p>Accesorios baño</p>
+        <p>$150</p>
+        <button class="btn">Añadir al carrito</button>
       </div>
-      <div class="image-container">
-        <div class="card">
-          <img src="./img/griferia-.jpg" alt="Griferias Con diseño moderno y minimalista" class="imagen">
-          <p>Griferias</p>
-        </div>
-        <div class="image-container">
-          <div class="card">
-            <img src="./img/sanitarios.jpg" alt="sanitarios moderno y minimalista. Destaca una combinación de materiales como madera en el mueble del lavabo y paredes de concreto" class="imagen">
-            <p>Sanitario</p>
-          </div>
-          <div class="image-container">
-            <div class="card">
-              <img src="./img/tanquec-jpg.jpg" alt="tanques de agua para casa" class="imagen">
-              <p>Tanques de agua</p>
-            </div>
-            <div class="image-container">
-              <div class="card">
-                <img src="./img/termo-.jpg" alt="Termotanques de gas o electrico para casa" class="imagen">
-                <p>Termotanques</p>
-              </div>
-              <div class="image-container">
-                <div class="card">
-                  <img src="./img/tuberia-.png" alt="Distinto tipos de tuberias y caños para trabajos de casa" class="imagen">
-                  <p>Tuberias y accesorios</p>
-                </div>
+      
+      <!-- Producto 2 -->
+      <div class="card">
+        <img src="./img/griferia-.jpg" alt="Griferías con diseño moderno y minimalista" class="imagen">
+        <p>Griferías</p>
+        <p>$250</p>
+        <button class="btn">Añadir al carrito</button>
+      </div>
+      
+      <!-- Producto 3 -->
+      <div class="card">
+        <img src="./img/sanitarios.jpg" alt="Sanitarios modernos con diseño minimalista" class="imagen">
+        <p>Sanitario</p>
+        <p>$200</p>
+        <button class="btn">Añadir al carrito</button>
+      </div>
+      
+      <!-- Producto 4 -->
+      <div class="card">
+        <img src="./img/tanquec-jpg.jpg" alt="Tanques de agua para casa" class="imagen">
+        <p>Tanques de agua</p>
+        <p>$200</p>
+        <button class="btn">Añadir al carrito</button>
+      </div>
+      
+      <!-- Producto 5 -->
+      <div class="card">
+        <img src="./img/termo-.jpg" alt="Termotanques de gas o eléctrico para casa" class="imagen">
+        <p>Termotanques</p>
+        <p>$100</p>
+        <button class="btn">Añadir al carrito</button>
+      </div>
+      
+      <!-- Producto 6 -->
+      <div class="card">
+        <img src="./img/tuberia-.png" alt="Distintos tipos de tuberías y accesorios" class="imagen">
+        <p>Tuberías y accesorios</p>
+        <p>$125</p>
+        <button class="btn">Añadir al carrito</button>
+      </div>
+    </div>
+  </section>
 
+  <!-- Lista del carrito -->
+  <div id="carrito-compras">
+    <h3>Carrito</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total-carrito">0</span></p>
+  </div>
 
-                <div class="whatsapp-icon">
-                  <a href="https://api.whatsapp.com/send?phone=1138874363&text=Hola,%20estoy%20buscando...'"
-                    target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" /> 
-                  </a>
-                </div>
+  <!-- Enlace de WhatsApp -->
+  <div class="whatsapp-icon">
+    <a href="https://api.whatsapp.com/send?phone=1138874363&text=Hola,%20estoy%20buscando...'" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+  </div>
 
+  <!-- Footer -->
+  <footer>
+    <p>Copyright © 2024 Sanitarios Barcala</p>
+  </footer>
 
-
-
-
-
-                <footer>
-                  <p>
-                    Copyright © 2024 Sanitarios Barcala
-                  </p>
-                </footer>
-
-
-                <!-- js -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                  crossorigin="anonymous"></script>
+   <!-- Scripts -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+   crossorigin="anonymous"></script>
+ <script src="script.js"></script>
 </body>
-
 </html>
